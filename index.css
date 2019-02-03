@@ -21,6 +21,10 @@ p.omikuji-kekka {
     margin-top: -10px;
 }
 
+p.omikuji-com {
+margin-bottom: 10px;
+}
+
 .ui {
     position: fixed;
 }
@@ -158,6 +162,6 @@ p.omikuji-kekka {
 .reload span {/*テキスト*/
     display:inline-block;
     transition: .5s;
-    color: #545454;
+    color: #979795;
     font-size: 0.9em;
 }
