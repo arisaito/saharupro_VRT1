@@ -22,7 +22,7 @@ function clickHandler(e) {
             allowOutsideClick: false,
             customClass: 'ending_window',
             html:  '<h2 class="gameClear">GAME CLEAR</h2>' + mres[Math.floor(Math.random() * mres.length)] + '<br>' +
-            '<a href="https://twitter.com/intent/tweet?url=https://arisaito.github.io/Tshirts1/&text=【QRコードの服着た人と出会った件】&hashtags=サハルプロダクツ" class="fl_tw2"><i class="fab fa-twitter"></i> <span>TWEET</span></a><br>' +
+            '<a href="https://twitter.com/intent/tweet?url=http://vrt1.saharu.work&text=【QRコードの服着た人と出会った件】&hashtags=サハルプロダクツ" class="fl_tw2"><i class="fab fa-twitter"></i> <span>TWEET</span></a><br>' +
             '<a href="#" class="shop"><i class="fas fa-home"></i> <span>SHOP</span></a><br>' +
             '<a href="" onclick="location.reload();return false" class="reload"><i class="fas fa-redo-alt"></i>  <span>もう一度あそぶ</span></i></a>',
         });
