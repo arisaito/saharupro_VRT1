@@ -15,6 +15,12 @@ p {
     margin-bottom: 0px;
 }
 
+p.omikuji-kekka {
+    font-size: 1.5em;
+    margin-bottom: -30px;
+    margin-top: -10px;
+}
+
 .ui {
     position: fixed;
 }
@@ -139,17 +145,19 @@ p {
     font-size: 18px;/*文字のサイズ*/
     line-height: 50px;/*高さと合わせる*/
     vertical-align: middle;/*垂直中央寄せ*/
-    background: #ffe79a;
     overflow: hidden;/*はみ出た部分を隠す*/
     text-decoration:none;/*下線は消す*/
     margin-bottom: 20px;
 }
 
 .reload .fa-redo-alt {
-    font-size: 25px;
+    font-size: 1em;
+    color: #545454;
 }
  
 .reload span {/*テキスト*/
     display:inline-block;
     transition: .5s;
+    color: #545454;
+    font-size: 0.9em;
 }
