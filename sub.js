@@ -26,8 +26,6 @@ function clickHandler(e) {
             '<a href="#" class="shop"><i class="fas fa-home"></i> <span>SHOP</span></a><br>' +
             '<a href="" onclick="location.reload();return false" class="reload"><i class="fas fa-redo-alt"></i>  <span>もう一度あそぶ</span></i></a>',
         });
-
-        
         
         // 関数
         function ShowKuji(kRes,kCom) {
