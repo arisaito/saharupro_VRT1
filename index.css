@@ -37,6 +37,7 @@ a-scene {
 .ui-arrow #up {
     text-align: center;
     display: block;
+
 }
 
 .ui-arrow #side {
@@ -69,7 +70,7 @@ p {
 
 p.omikuji-kekka {
     font-size: 1.5em;
-    margin-bottom: -30px;
+    margin-bottom: -10px;
     margin-top: -10px;
 }
 
