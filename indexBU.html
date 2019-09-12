@@ -61,21 +61,10 @@
     <meta property="og:image" content="https://vrt1.saharu.work/images/twitter_card.png" />
 
     <link rel="shortcut icon" type="image/x-icon" href="https://vrt1.saharu.work/images/favicon.ico">
+    
   </head>
 
   <body onload="init()">
-
-    <div class="ui-arrow">
-      <div class="inner-arrow">
-        <p id="up">▲</p>
-        <div id="side">
-          <p id="left">◀︎</p>
-          <p id="blank"></p>
-          <p id="right">▶</p>
-      </div>
-        <p id="down">▼</p>
-    </div>
-  </div>
     <a-scene vr-mode-ui="enabled: false">
      
       <!-- assets -->
@@ -95,7 +84,7 @@
 
 
       <!-- camera -->
-      <a-entity camera position="0 3 0" id="camera">
+      <a-entity camera position="0 3 0">
         <a-entity id="myCursor" cursor="fuse:true; maxDistance:50; fuseTimeout:1000;" scale="0.1 0.1 0.1" position="0 0 -2" geometry="primitive: ring" material="color: grey; shader: flat; opacity:0.5">
           <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="none" from="0.03 0.03 0.03" to="0.001 0.001 0.001">
           </a-animation>
@@ -105,7 +94,7 @@
 
 
       <!-- objects -->
-      <a-entity random-position="min: -5 4.5 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
+      <a-entity random-position="min: -5 3 -4; max: 5 3 -6" rotation="0 0 0" scale="1 1 1">
         <a-octahedron id="obj0" class="obj" color="#71cebf">
           <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
           <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
@@ -114,7 +103,7 @@
         </a-animation>
       </a-entity>
 
-      <a-entity random-position="min: -5 4.5 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
+      <a-entity random-position="min: -5 3 -4; max: 5 3 -6" rotation="0 0 0" scale="1 1 1">
         <a-octahedron id="obj1" class="obj" color="#ff787a">
           <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
           <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
@@ -123,7 +112,7 @@
         </a-animation>
       </a-entity>
 
-      <a-entity random-position="min: -5 4.5 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
+      <a-entity random-position="min: -5 3 -4; max: 5 3 -6" rotation="0 0 0" scale="1 1 1">
         <a-octahedron id="obj2" class="obj" color="#a4ddff">
           <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
           <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
@@ -132,7 +121,7 @@
         </a-animation>
       </a-entity>
 
-      <a-entity random-position="min: -5 4.5 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
+      <a-entity random-position="min: -5 3 -4; max: 5 3 -6" rotation="0 0 0" scale="1 1 1">
         <a-octahedron id="obj3" class="obj" color="#ffbbc9">
           <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
           <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
@@ -141,7 +130,7 @@
         </a-animation>
       </a-entity>
 
-      <a-entity random-position="min: -5 3 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
+      <a-entity random-position="min: -5 3 -4; max: 5 3 -6" rotation="0 0 0" scale="1 1 1">
         <a-octahedron id="obj4" class="obj" color="#ffea8e">
           <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
           <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
@@ -161,8 +150,7 @@
         '<p>カーソルを合わせて<br>５つの宝石を消そう！</p>',
         confirmButtonColor: "#95e1d3", 
       })
-
-       var right = document.getElementById("right");
+      var right = document.getElementById("right");
         var left = document.getElementById("left");
         var up = document.getElementById("up");
         var down = document.getElementById("down");
@@ -266,8 +254,6 @@
             clearInterval(intervalDown);
             false;
         })
-
-
     </script>
   </body>
 </html>
