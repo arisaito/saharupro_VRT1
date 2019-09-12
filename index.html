@@ -32,242 +32,245 @@
 ~~~:~~....`.`..`..-1111111111111:....`..`.`..-~~~~~~~~~~~~~              ~~~~~~~~~~~~~~:~~~~~
 -->
 
-  <head>
-    
-    <meta charset="utf-8">
-    <title>VRT#1</title>
-    <script src="aframe.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="sweetalert2.all.min.js"></script>
-    <script src="sub.js"></script>
-    <!-- guraddation sky -->
-    <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
-    <!-- ocean -->
-    <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
-    <!-- randomizer -->
-    <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
-    
-    <link type="text/css" rel="stylesheet" href="index.css">
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet">
+<head>
 
-    <!-- Twitter card -->
-    <meta name="description" content="#すこしだけ世界を味方にする服 by サハルプロダクツ" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://vrt1.saharu.work/images/twitter_card.png" />
-    <meta property="og:title" content="VRT#1" />
-    <meta property="og:description" content="#すこしだけ世界を味方にする服 by サハルプロダクツ" />
-    <meta property="og:image" content="https://vrt1.saharu.work/images/twitter_card.png" />
+  <meta charset="utf-8">
+  <title>VRT#1</title>
+  <script src="aframe.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="sweetalert2.all.min.js"></script>
+  <script src="sub.js"></script>
+  <!-- guraddation sky -->
+  <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+  <!-- ocean -->
+  <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
+  <!-- randomizer -->
+  <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
 
-    <link rel="shortcut icon" type="image/x-icon" href="https://vrt1.saharu.work/images/favicon.ico">
-  </head>
+  <link type="text/css" rel="stylesheet" href="index.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet">
 
-  <body onload="init()">
+  <!-- Twitter card -->
+  <meta name="description" content="#すこしだけ世界を味方にする服 by サハルプロダクツ" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://vrt1.saharu.work/images/twitter_card.png" />
+  <meta property="og:title" content="VRT#1" />
+  <meta property="og:description" content="#すこしだけ世界を味方にする服 by サハルプロダクツ" />
+  <meta property="og:image" content="https://vrt1.saharu.work/images/twitter_card.png" />
 
-    <div class="ui-arrow">
-      <div class="inner-arrow">
-        <p id="up">▲</p>
-        <div id="side">
-          <p id="left">◀︎</p>
-          <p id="blank"></p>
-          <p id="right">▶</p>
+  <link rel="shortcut icon" type="image/x-icon" href="https://vrt1.saharu.work/images/favicon.ico">
+</head>
+
+<body onload="init()">
+
+  <div class="ui-arrow">
+    <div class="inner-arrow">
+      <p id="up"><img class="img-arrow" src="src/up.png" alt=""></p>
+      <div id="side">
+        <p id="left"><img class="img-arrow" src="src/left.png" alt="">︎</p>
+        <p id="blank"></p>
+        <p id="right"><img class="img-arrow" src="src/right.png" alt=""></p>
       </div>
-        <p id="down">▼</p>
+      <p id="down"><img class="img-arrow" src="src/down.png" alt=""></p>
     </div>
   </div>
-    <a-scene vr-mode-ui="enabled: false">
-     
-      <!-- assets -->
-      <a-assets>
-      </a-assets>
+  <a-scene vr-mode-ui="enabled: false">
 
-      <!-- sky -->
-      <a-sky color=#FCFBF8 material="" geometry=""></a-sky>
+    <!-- assets -->
+    <a-assets>
+    </a-assets>
 
-      <!-- pool -->
-      <a-entity id="ocean" ocean="density: 20; width: 50; depth: 50; speed: 4"
-                material="color: #9CE3F9; opacity: 0.75; metalness: 0; roughness: 1"
-                rotation="-90 0 0"></a-entity>
+    <!-- sky -->
+    <a-sky color=#FCFBF8 material="" geometry=""></a-sky>
 
-      <!-- light -->
-      <a-light type="hemisphere" color="#BBB" intensity="1.13" position="0 -0.5840950606434809 -1.6791800903278"></a-light>
+    <!-- pool -->
+    <a-entity id="ocean" ocean="density: 20; width: 50; depth: 50; speed: 4"
+      material="color: #9CE3F9; opacity: 0.75; metalness: 0; roughness: 1" rotation="-90 0 0"></a-entity>
 
-
-      <!-- camera -->
-      <a-entity camera position="0 3 0" id="camera">
-        <a-entity id="myCursor" cursor="fuse:true; maxDistance:50; fuseTimeout:1000;" scale="0.1 0.1 0.1" position="0 0 -2" geometry="primitive: ring" material="color: grey; shader: flat; opacity:0.5">
-          <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="none" from="0.03 0.03 0.03" to="0.001 0.001 0.001">
-          </a-animation>
-        </a-entity>
-      </a-entity>
+    <!-- light -->
+    <a-light type="hemisphere" color="#BBB" intensity="1.13" position="0 -0.5840950606434809 -1.6791800903278">
+    </a-light>
 
 
-
-      <!-- objects -->
-      <a-entity random-position="min: -5 4.5 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
-        <a-octahedron id="obj0" class="obj" color="#71cebf">
-          <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
-          <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
-        </a-octahedron>
-        <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
+    <!-- camera -->
+    <a-entity camera position="0 3 0" id="camera">
+      <a-entity id="myCursor" cursor="fuse:true; maxDistance:50; fuseTimeout:1000;" scale="0.1 0.1 0.1"
+        position="0 0 -2" geometry="primitive: ring" material="color: grey; shader: flat; opacity:0.5">
+        <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="none" from="0.03 0.03 0.03"
+          to="0.001 0.001 0.001">
         </a-animation>
       </a-entity>
+    </a-entity>
 
-      <a-entity random-position="min: -5 4.5 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
-        <a-octahedron id="obj1" class="obj" color="#ff787a">
-          <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
-          <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
-        </a-octahedron>
-        <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
-        </a-animation>
-      </a-entity>
 
-      <a-entity random-position="min: -5 4.5 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
-        <a-octahedron id="obj2" class="obj" color="#a4ddff">
-          <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
-          <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
-        </a-octahedron>
-        <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
-        </a-animation>
-      </a-entity>
 
-      <a-entity random-position="min: -5 4.5 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
-        <a-octahedron id="obj3" class="obj" color="#ffbbc9">
-          <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
-          <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
-        </a-octahedron>
-        <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
-        </a-animation>
-      </a-entity>
+    <!-- objects -->
+    <a-entity random-position="min: -5 4.5 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
+      <a-octahedron id="obj0" class="obj" color="#71cebf">
+        <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
+        <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
+      </a-octahedron>
+      <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
+      </a-animation>
+    </a-entity>
 
-      <a-entity random-position="min: -5 3 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
-        <a-octahedron id="obj4" class="obj" color="#ffea8e">
-          <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
-          <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
-        </a-octahedron>
-        <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
-        </a-animation>
-      </a-entity>
+    <a-entity random-position="min: -5 4.5 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
+      <a-octahedron id="obj1" class="obj" color="#ff787a">
+        <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
+        <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
+      </a-octahedron>
+      <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
+      </a-animation>
+    </a-entity>
 
-      <!-- Look up UI -->
-      <a-text value="Look Up" position="-0.4 1 -0.7" rotation="-80 180 180"></a-text>
+    <a-entity random-position="min: -5 4.5 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
+      <a-octahedron id="obj2" class="obj" color="#a4ddff">
+        <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
+        <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
+      </a-octahedron>
+      <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
+      </a-animation>
+    </a-entity>
 
-    </a-scene>
-    
-    <script>
-	    Swal({
-        html: '<h2 class="playGame">PLAY GAME</h2>' +
+    <a-entity random-position="min: -5 4.5 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
+      <a-octahedron id="obj3" class="obj" color="#ffbbc9">
+        <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
+        <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
+      </a-octahedron>
+      <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
+      </a-animation>
+    </a-entity>
+
+    <a-entity random-position="min: -5 3 -4; max: 5 2.5 -6" rotation="0 0 0" scale="1 1 1">
+      <a-octahedron id="obj4" class="obj" color="#ffea8e">
+        <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
+        <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
+      </a-octahedron>
+      <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
+      </a-animation>
+    </a-entity>
+
+    <!-- Look up UI -->
+    <a-text value="Look Up" position="-0.4 1 -0.7" rotation="-80 180 180"></a-text>
+
+  </a-scene>
+
+  <script>
+    Swal({
+      html: '<h2 class="playGame">PLAY GAME</h2>' +
         '<p>カーソルを合わせて<br>５つの宝石を消そう！</p>',
-        confirmButtonColor: "#95e1d3", 
-      })
+      confirmButtonColor: "#95e1d3",
+    })
 
-       var right = document.getElementById("right");
-        var left = document.getElementById("left");
-        var up = document.getElementById("up");
-        var down = document.getElementById("down");
-        var intervalRight;
-        var intervalLeft;
-        var intervalUp;
-        var intervalDown;
+    var right = document.getElementById("right");
+    var left = document.getElementById("left");
+    var up = document.getElementById("up");
+    var down = document.getElementById("down");
+    var intervalRight;
+    var intervalLeft;
+    var intervalUp;
+    var intervalDown;
 
-        var camera = document.getElementById("camera");
-        var rotation = camera.getAttribute("rotation");
+    var camera = document.getElementById("camera");
+    var rotation = camera.getAttribute("rotation");
 
-        // left
-        left.addEventListener("touchstart", (e) => {
-            event.preventDefault();
+    // left
+    left.addEventListener("touchstart", (e) => {
+      event.preventDefault();
 
-            intervalLeft = setInterval(() => {
-                rotateLeft();
-            },
-                30
-            );
+      intervalLeft = setInterval(() => {
+        rotateLeft();
+      },
+        30
+      );
 
-            function rotateLeft() {
-                rotation.y += Math.PI;
-                camera.setAttribute("rotation", rotation);
-                false;
-            }
-        });
+      function rotateLeft() {
+        rotation.y += Math.PI;
+        camera.setAttribute("rotation", rotation);
+        false;
+      }
+    });
 
-        left.addEventListener("touchend", (e) => {
-            console.log("end");
-            clearInterval(intervalLeft);
-            false;
-        })
+    left.addEventListener("touchend", (e) => {
+      console.log("end");
+      clearInterval(intervalLeft);
+      false;
+    })
 
-        // right
-        right.addEventListener("touchstart", (e) => {
-            event.preventDefault();
+    // right
+    right.addEventListener("touchstart", (e) => {
+      event.preventDefault();
 
-            intervalRight = setInterval(() => {
-                rotateRight();
-            },
-                30
-            );
+      intervalRight = setInterval(() => {
+        rotateRight();
+      },
+        30
+      );
 
-            function rotateRight() {
-                rotation.y += -Math.PI;
-                camera.setAttribute("rotation", rotation);
-                false;
-            }
-        });
+      function rotateRight() {
+        rotation.y += -Math.PI;
+        camera.setAttribute("rotation", rotation);
+        false;
+      }
+    });
 
-        right.addEventListener("touchend", (e) => {
-            console.log("end");
-            clearInterval(intervalRight);
-            false;
-        })
+    right.addEventListener("touchend", (e) => {
+      console.log("end");
+      clearInterval(intervalRight);
+      false;
+    })
 
-        // up
-        up.addEventListener("touchstart", (e) => {
-            event.preventDefault();
+    // up
+    up.addEventListener("touchstart", (e) => {
+      event.preventDefault();
 
-            intervalUp = setInterval(() => {
-                rotateUp();
-            },
-                30
-            );
+      intervalUp = setInterval(() => {
+        rotateUp();
+      },
+        30
+      );
 
-            function rotateUp() {
+      function rotateUp() {
 
-                rotation.x += Math.PI;
-                camera.setAttribute("rotation", rotation);
-                false;
-            }
-        });
+        rotation.x += Math.PI;
+        camera.setAttribute("rotation", rotation);
+        false;
+      }
+    });
 
-        up.addEventListener("touchend", (e) => {
-            console.log("end");
-            clearInterval(intervalUp);
-            false;
-        })
+    up.addEventListener("touchend", (e) => {
+      console.log("end");
+      clearInterval(intervalUp);
+      false;
+    })
 
-        // down
-        down.addEventListener("touchstart", (e) => {
-            event.preventDefault();
+    // down
+    down.addEventListener("touchstart", (e) => {
+      event.preventDefault();
 
-            intervalDown = setInterval(() => {
-                rotateDown();
-            },
-                30
-            );
+      intervalDown = setInterval(() => {
+        rotateDown();
+      },
+        30
+      );
 
-            function rotateDown() {
-                rotation.x += -Math.PI;
-                camera.setAttribute("rotation", rotation);
-                false;
-            }
-        });
+      function rotateDown() {
+        rotation.x += -Math.PI;
+        camera.setAttribute("rotation", rotation);
+        false;
+      }
+    });
 
-        down.addEventListener("touchend", (e) => {
-            console.log("end");
-            clearInterval(intervalDown);
-            false;
-        })
+    down.addEventListener("touchend", (e) => {
+      console.log("end");
+      clearInterval(intervalDown);
+      false;
+    })
 
 
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>
