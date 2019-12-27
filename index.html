@@ -64,38 +64,16 @@
 </head>
 
 <body onload="init()">
-
-  <div class="ui-arrow">
-    <div class="inner-arrow">
-      <p id="up"><img class="img-arrow" src="src/up.png" alt=""></p>
-      <div id="side">
-        <p id="left"><img class="img-arrow" src="src/left.png" alt="">︎</p>
-        <p id="blank"></p>
-        <p id="right"><img class="img-arrow" src="src/right.png" alt=""></p>
-      </div>
-      <p id="down"><img class="img-arrow" src="src/down.png" alt=""></p>
-    </div>
-  </div>
   <a-scene vr-mode-ui="enabled: false">
+    <a-sky color=#FCFBF8></a-sky>
 
-    <!-- assets -->
-    <a-assets>
-    </a-assets>
-
-    <!-- sky -->
-    <a-sky color=#FCFBF8 material="" geometry=""></a-sky>
-
-    <!-- pool -->
     <a-entity id="ocean" ocean="density: 20; width: 50; depth: 50; speed: 4"
       material="color: #9CE3F9; opacity: 0.75; metalness: 0; roughness: 1" rotation="-90 0 0"></a-entity>
 
-    <!-- light -->
     <a-light type="hemisphere" color="#BBB" intensity="1.13" position="0 -0.5840950606434809 -1.6791800903278">
     </a-light>
 
-
-    <!-- camera -->
-    <a-entity camera position="0 3 0" id="camera">
+    <a-entity camera position="0 3 0" id="camera" look-controls>
       <a-entity id="myCursor" cursor="fuse:true; maxDistance:50; fuseTimeout:1000;" scale="0.1 0.1 0.1"
         position="0 0 -2" geometry="primitive: ring" material="color: grey; shader: flat; opacity:0.5">
         <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="none" from="0.03 0.03 0.03"
@@ -103,8 +81,6 @@
         </a-animation>
       </a-entity>
     </a-entity>
-
-
 
     <!-- objects -->
     <a-entity random-position="min: -6 1 -4; max: 6 6 -6" rotation="0 0 0" scale="1 1 1">
@@ -157,117 +133,5 @@
     <a-text value="Look Up" position="-0.4 1 -0.7" rotation="-80 180 180"></a-text>
 
   </a-scene>
-
-  <script>
-    Swal({
-      html: '<h2 class="playGame">PLAY GAME</h2>' +
-        '<p>カーソルを合わせて<br>５つの宝石を消そう！</p>',
-      confirmButtonColor: "#95e1d3",
-    })
-
-    var right = document.getElementById("right");
-    var left = document.getElementById("left");
-    var up = document.getElementById("up");
-    var down = document.getElementById("down");
-    var intervalRight;
-    var intervalLeft;
-    var intervalUp;
-    var intervalDown;
-
-    var camera = document.getElementById("camera");
-    var rotation = camera.getAttribute("rotation");
-
-    // left
-    left.addEventListener("touchstart", (e) => {
-      event.preventDefault();
-
-      intervalLeft = setInterval(() => {
-        rotateLeft();
-      },
-        30
-      );
-
-      function rotateLeft() {
-        rotation.y += Math.PI;
-        camera.setAttribute("rotation", rotation);
-        false;
-      }
-    });
-
-    left.addEventListener("touchend", (e) => {
-      clearInterval(intervalLeft);
-      false;
-    })
-
-    // right
-    right.addEventListener("touchstart", (e) => {
-      event.preventDefault();
-
-      intervalRight = setInterval(() => {
-        rotateRight();
-      },
-        30
-      );
-
-      function rotateRight() {
-        rotation.y += -Math.PI;
-        camera.setAttribute("rotation", rotation);
-        false;
-      }
-    });
-
-    right.addEventListener("touchend", (e) => {
-      clearInterval(intervalRight);
-      false;
-    })
-
-    // up
-    up.addEventListener("touchstart", (e) => {
-      event.preventDefault();
-
-      intervalUp = setInterval(() => {
-        rotateUp();
-      },
-        30
-      );
-
-      function rotateUp() {
-
-        rotation.x += Math.PI;
-        camera.setAttribute("rotation", rotation);
-        false;
-      }
-    });
-
-    up.addEventListener("touchend", (e) => {
-      clearInterval(intervalUp);
-      false;
-    })
-
-    // down
-    down.addEventListener("touchstart", (e) => {
-      event.preventDefault();
-
-      intervalDown = setInterval(() => {
-        rotateDown();
-      },
-        30
-      );
-
-      function rotateDown() {
-        rotation.x += -Math.PI;
-        camera.setAttribute("rotation", rotation);
-        false;
-      }
-    });
-
-    down.addEventListener("touchend", (e) => {
-      clearInterval(intervalDown);
-      false;
-    })
-
-
-  </script>
 </body>
-
 </html>
