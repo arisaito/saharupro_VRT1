@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <!--
 :~::~::~::~::~:?1ll..-_::::::::::::::::::::~:~  .JrrrrrrrrrrrrrrrrrrO+_::~:~_...............
 ~~:~~~:~~:~~~:~::~?-:::::::::::~:::~:::~:::::-(rrrrrrrrrrrrrrrrrrrrrrrrO<_..................
@@ -31,107 +30,211 @@
 :~~?zrZ7_.....`..`-llllll=lllz+_:~~_.........-~:~::~~~~~<1ll<!           ~:~~:~~~~:?zrO7<:::~
 ~~~:~~....`.`..`..-1111111111111:....`..`.`..-~~~~~~~~~~~~~              ~~~~~~~~~~~~~~:~~~~~
 -->
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
+    <title>VRT#1</title>
+    <script src="./lib/aframe.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+    ></script>
+    <script src="./lib/sweetalert2.all.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
+    <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
+    <script src="./src/sub.js"></script>
+    <link type="text/css" rel="stylesheet" href="./src/index.css" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Fredoka+One"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kosugi+Maru"
+      rel="stylesheet"
+    />
 
-  <meta charset="utf-8">
-  <title>VRT#1</title>
-  <script src="aframe.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="sweetalert2.all.min.js"></script>
-  <script src="sub.js"></script>
-  <!-- guraddation sky -->
-  <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
-  <!-- ocean -->
-  <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
-  <!-- randomizer -->
-  <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
+    <!-- Twitter card -->
+    <meta
+      name="description"
+      content="#すこしだけ世界を味方にする服 by サハルプロダクツ"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://vrt1.saharu.work/images/twitter_card.png"
+    />
+    <meta property="og:title" content="VRT#1" />
+    <meta
+      property="og:description"
+      content="#すこしだけ世界を味方にする服 by サハルプロダクツ"
+    />
+    <meta
+      property="og:image"
+      content="https://vrt1.saharu.work/images/twitter_card.png"
+    />
 
-  <link type="text/css" rel="stylesheet" href="index.css">
-  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://vrt1.saharu.work/images/favicon.ico"
+    />
+  </head>
 
-  <!-- Twitter card -->
-  <meta name="description" content="#すこしだけ世界を味方にする服 by サハルプロダクツ" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://vrt1.saharu.work/images/twitter_card.png" />
-  <meta property="og:title" content="VRT#1" />
-  <meta property="og:description" content="#すこしだけ世界を味方にする服 by サハルプロダクツ" />
-  <meta property="og:image" content="https://vrt1.saharu.work/images/twitter_card.png" />
+  <body>
+    <div class="ui">
+      <div class="modal-first modal" id="modal-first">
+        <div class="modal-bg"></div>
+        <div class="modal-inner">
+          <div class="modal-inner_conts">
+            <p class="c-ttl">GAME START</p>
+            <p class="c-txt">スマホを動かしてカーソルを合わせ、<br />５つの宝石を消そう！</p>
+            <div class="c-btn" id="btn-first">OK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-second modal" id="modal-second">
+      <div class="modal-inner">
+        <div class="modal-inner_conts">
+          <p class="c-ttl">GAME CLEAR</p>
+          
+          <p class="c-txt mikuji-message" id="mikuji-message"></p><br>
+          <a class="c-btn c-btn-twitter" href="https://twitter.com/intent/tweet?url=https://suzuri.jp/saharu54&text=【QRコードの服着た人と出会った件】&hashtags=サハルプロダクツ" class="fl_tw2" target="__blank">
+            <i class="fab fa-twitter"></i> <span>TWEET</span>
+          </a>
+          <br>
+          <a class="c-btn c-btn-shop" href="https://suzuri.jp/saharu54" class="shop" target="__blank">
+            <i class="fas fa-home"></i> <span>SHOP</span>
+          </a>
+          <br>
+          <a href="" onclick="location.reload();return false" class="reload">
+            <i class="fas fa-redo-alt"></i>  <span>もう一度あそぶ</span></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="kirakira-bg" id="kirakira-bg"></div>
+  </div>
+    <a-scene vr-mode-ui="enabled: false">
+      <a-sky color="#FCFBF8"></a-sky>
+      <a-entity
+        id="ocean"
+        ocean="density: 20; width: 50; depth: 50; speed: 4"
+        material="color: #9CE3F9; opacity: 0.75; metalness: 0; roughness: 1"
+        rotation="-90 0 0"
+      ></a-entity>
+      <a-light
+        type="hemisphere"
+        color="#BBB"
+        intensity="1.13"
+        position="0 -0.5840950606434809 -1.6791800903278"
+      >
+      </a-light>
+      <a-entity camera position="0 3 0" id="camera" look-controls>
 
-  <link rel="shortcut icon" type="image/x-icon" href="https://vrt1.saharu.work/images/favicon.ico">
-</head>
-
-<body onload="init()">
-  <a-scene vr-mode-ui="enabled: false">
-    <a-sky color=#FCFBF8></a-sky>
-
-    <a-entity id="ocean" ocean="density: 20; width: 50; depth: 50; speed: 4"
-      material="color: #9CE3F9; opacity: 0.75; metalness: 0; roughness: 1" rotation="-90 0 0"></a-entity>
-
-    <a-light type="hemisphere" color="#BBB" intensity="1.13" position="0 -0.5840950606434809 -1.6791800903278">
-    </a-light>
-
-    <a-entity camera position="0 3 0" id="camera" look-controls>
-      <a-entity id="myCursor" cursor="fuse:true; maxDistance:50; fuseTimeout:1000;" scale="0.1 0.1 0.1"
-        position="0 0 -2" geometry="primitive: ring" material="color: grey; shader: flat; opacity:0.5">
-        <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="none" from="0.03 0.03 0.03"
-          to="0.001 0.001 0.001">
-        </a-animation>
+        <a-entity
+          id="cursor"
+          cursor="fuse: true; maxDistance:50; fuseTimeout:1000;"
+          scale="0.1 0.1 0.1"
+          position="0 0 -2"
+          geometry="primitive: ring"
+          material="color: grey; shader: flat; opacity:0.5"
+        >
+        </a-entity>
       </a-entity>
-    </a-entity>
-
-    <!-- objects -->
-    <a-entity random-position="min: -6 1 -4; max: 6 6 -6" rotation="0 0 0" scale="1 1 1">
-      <a-octahedron id="obj0" class="obj" color="#71cebf"
-        animation="property: position; to: 0 1 0; loop: true; dur: 3000;">
-        <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
-        <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
-      </a-octahedron>
-      <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
-      </a-animation>
-    </a-entity>
-
-    <a-entity random-position="min: -6 1 -4; max: 6 6 -6" rotation="0 0 0" scale="1 1 1">
-      <a-octahedron id="obj1" class="obj" color="#ff787a">
-        <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
-        <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
-      </a-octahedron>
-      <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
-      </a-animation>
-    </a-entity>
-
-    <a-entity random-position="min: -6 1 -4; max: 6 6 -6" rotation="0 0 0" scale="1 1 1">
-      <a-octahedron id="obj2" class="obj" color="#a4ddff">
-        <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
-        <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
-      </a-octahedron>
-      <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
-      </a-animation>
-    </a-entity>
-
-    <a-entity random-position="min: -6 1 -4; max: 6 6 -6" rotation="0 0 0" scale="1 1 1">
-      <a-octahedron id="obj3" class="obj" color="#ffbbc9">
-        <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
-        <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
-      </a-octahedron>
-      <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
-      </a-animation>
-    </a-entity>
-
-    <a-entity random-position="min: -6 1 -4; max: 5 6 -6" rotation="0 0 0" scale="1 1 1">
-      <a-octahedron id="obj4" class="obj" color="#ffea8e">
-        <a-animation begin="mouseenter" attribute="scale" dur="1000" easing="ease-in-sine" to="2 2 2"></a-animation>
-        <a-animation begin="mouseleave" attribute="scale" delay="50" to="1 1 1"></a-animation>
-      </a-octahedron>
-      <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" dur="4000">
-      </a-animation>
-    </a-entity>
-
-    <!-- Look up UI -->
-    <a-text value="Look Up" position="-0.4 1 -0.7" rotation="-80 180 180"></a-text>
-
-  </a-scene>
-</body>
+      <a-entity
+        random-position="min: -6 1 -4; max: 6 6 -6"
+        rotation="0 0 0"
+        scale="1 1 1"
+        animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; easing: linear; dur: 4000"
+      >
+        <a-octahedron
+          id="obj0"
+          class="obj"
+          color="#71cebf"
+          animation="property: position; to: 0 1 0; loop: true; dur: 3000; dir: alternate; easing: easeInOutSine	"
+          animation__2="startEvents: mouseenter; property: scale; dur: 1000; easing: linear; to: 2 2 2"
+          animation__3="startEvents: mouseleave; property: scale; to: 1 1 1"
+        >
+        </a-octahedron>
+      </a-entity>
+      <a-entity
+        random-position="min: -6 1 -4; max: 6 6 -6"
+        rotation="0 0 0"
+        scale="1 1 1"
+        animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; easing: linear; dur: 4000"
+      >
+        <a-octahedron
+          id="obj1"
+          class="obj"
+          color="#ff787a"
+          animation="property: position; to: 0 1 0; loop: true; dur: 3000; dir: alternate; easing: easeInOutSine	"
+          animation__2="startEvents: mouseenter; property: scale; dur: 1000; easing: linear; to: 2 2 2"
+          animation__3="startEvents: mouseleave; property: scale; to: 1 1 1"
+        >
+        </a-octahedron>
+      </a-entity>
+      <a-entity
+        random-position="min: -6 1 -4; max: 6 6 -6"
+        rotation="0 0 0"
+        scale="1 1 1"
+        animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; easing: linear; dur: 4000"
+      >
+        <a-octahedron
+          id="obj2"
+          class="obj"
+          color="#a4ddff"
+          animation="property: position; to: 0 1 0; loop: true; dur: 3000; dir: alternate; easing: easeInOutSine	"
+          animation__2="startEvents: mouseenter; property: scale; dur: 1000; easing: linear; to: 2 2 2"
+          animation__3="startEvents: mouseleave; property: scale; to: 1 1 1"
+        >
+        </a-octahedron>
+      </a-entity>
+      <a-entity
+        random-position="min: -6 1 -4; max: 6 6 -6"
+        rotation="0 0 0"
+        scale="1 1 1"
+        animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; easing: linear; dur: 4000"
+      >
+        <a-octahedron
+          id="obj3"
+          class="obj"
+          color="#ffbbc9"
+          animation="property: position; to: 0 1 0; loop: true; dur: 3000; dir: alternate; easing: easeInOutSine	"
+          animation__2="startEvents: mouseenter; property: scale; dur: 1000; easing: linear; to: 2 2 2"
+          animation__3="startEvents: mouseleave; property: scale; to: 1 1 1"
+        >
+        </a-octahedron>
+      </a-entity>
+      <a-entity
+        random-position="min: -6 1 -4; max: 6 6 -6"
+        rotation="0 0 0"
+        scale="1 1 1"
+        animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; easing: linear; dur: 4000"
+      >
+        <a-octahedron
+          id="obj4"
+          class="obj"
+          color="#ffea8e"
+          animation="property: position; to: 0 1 0; loop: true; dur: 3000; dir: alternate; easing: easeInOutSine	"
+          animation__2="startEvents: mouseenter; property: scale; dur: 1000; easing: linear; to: 2 2 2"
+          animation__3="startEvents: mouseleave; property: scale; to: 1 1 1"
+        >
+        </a-octahedron>
+      </a-entity>
+      <!-- Look up UI -->
+      <a-text
+        value="Look Up"
+        position="-0.4 1 -0.7"
+        rotation="-80 180 180"
+      ></a-text>
+    </a-scene>
+  </body>
 </html>
