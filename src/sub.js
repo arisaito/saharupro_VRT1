@@ -55,13 +55,13 @@ const omikujiReady = () => {
   mres = new Array();
   mcom = new Array();
   mres[0] =
-    '<p class="omikuji-kekka"><i class="far fa-grin-squint"></i> 大吉</p><br><p class="omikuji-com">わたしと出会ったあなたは超ラッキー！</p>';
+    '<p class="omikuji-kekka"><i class="far fa-grin-squint"></i> 大吉</p><br><p class="omikuji-com">最高の一日を楽しんでね！</p>';
   mres[1] =
-    '<p class="omikuji-kekka"><i class="far fa-grin-wink"></i> 中吉</p><br><p class="omikuji-com">わたしとランチに行けば運気は大吉！</p>';
+    '<p class="omikuji-kekka"><i class="far fa-grin-wink"></i> 中吉</p><br><p class="omikuji-com">行ったことない場所に行ってみよう！</p>';
   mres[2] =
-    '<p class="omikuji-kekka"><i class="far fa-grin"></i> 小吉</p><br><p class="omikuji-com">わたしにお菓子を奢れば大吉！</p>';
+    '<p class="omikuji-kekka"><i class="far fa-grin"></i> 小吉</p><br><p class="omikuji-com">今日はおいしいもの食べよう！</p>';
   mres[3] =
-    '<p class="omikuji-kekka"><i class="far fa-surprise"></i> 吉</p><br><p class="omikuji-com">わたしに優しくすると運気上昇！</p>';
+    '<p class="omikuji-kekka"><i class="far fa-surprise"></i> 吉</p><br><p class="omikuji-com">のんびりしよう！</p>';
   mres[4] =
     '<p class="omikuji-kekka"><i class="far fa-meh-rolling-eyes"></i> 末吉</p><br><p class="omikuji-com">リトライすると吉！</p>';
 };
