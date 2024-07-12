@@ -94,7 +94,9 @@
         <div class="modal-inner">
           <div class="modal-inner_conts">
             <p class="c-ttl">GAME START</p>
-            <p class="c-txt">スマホを動かしてカーソルを合わせ、<br />５つの宝石を消そう！</p>
+            <p class="c-txt">
+              スマホを動かしてカーソルを合わせ、<br />５つの宝石を消そう！
+            </p>
             <div class="c-btn" id="btn-first">OK</div>
           </div>
         </div>
@@ -104,25 +106,47 @@
       <div class="modal-inner">
         <div class="modal-inner_conts">
           <p class="c-ttl">GAME CLEAR</p>
-          
-          <p class="c-txt mikuji-message" id="mikuji-message"></p><br>
-          <a class="c-btn c-btn-twitter" href="https://twitter.com/intent/tweet?url=https://suzuri.jp/saharu54&text=【QRコードの服着た人と出会った件】&hashtags=サハルプロダクツ" class="fl_tw2" target="__blank">
+          <p class="c-txt mikuji-message" id="mikuji-message"></p>
+          <br />
+          <!-- <a
+            class="c-btn c-btn-twitter"
+            href="https://twitter.com/intent/tweet?url=https://suzuri.jp/saharu54"
+            class="fl_tw2"
+            target="__blank"
+          >
             <i class="fab fa-twitter"></i> <span>TWEET</span>
+          </a> -->
+          <a
+            class="c-btn c-btn-retry"
+            href=""
+            onclick="location.reload();return false"
+            class="reload"
+          >
+            <i class="fas fa-redo-alt"></i> <span>RETRY</span>
           </a>
-          <br>
-          <a class="c-btn c-btn-shop" href="https://suzuri.jp/saharu54" class="shop" target="__blank">
+          <br />
+          <a
+            class="c-btn c-btn-shop"
+            href="https://suzuri.jp/saharu54"
+            class="shop"
+            target="__blank"
+          >
             <i class="fas fa-home"></i> <span>SHOP</span>
           </a>
-          <br>
-          <a href="" onclick="location.reload();return false" class="reload">
-            <i class="fas fa-redo-alt"></i>  <span>もう一度あそぶ</span></i>
-          </a>
+          <!-- <br /> -->
+          <!-- <a href="" onclick="location.reload();return false" class="reload">
+            <i class="fas fa-redo-alt"></i> <span>もう一度あそぶ</span>
+          </a> -->
         </div>
       </div>
     </div>
+
     <div class="kirakira-bg" id="kirakira-bg"></div>
-  </div>
+
     <a-scene vr-mode-ui="enabled: false">
+      <a-assets>
+        <img id="cursor-image" src="./images/cursor.png" />
+      </a-assets>
       <a-sky color="#FCFBF8"></a-sky>
       <a-entity
         id="ocean"
@@ -138,16 +162,23 @@
       >
       </a-light>
       <a-entity camera position="0 3 0" id="camera" look-controls>
-
-        <a-entity
+        <a-image
+          id="cursor"
+          src="#cursor-image"
+          position="0 0 -2"
+          scale="0.25 0.25 0.25"
+          opacity="0.5"
+          cursor="fuse: true; maxDistance:50; fuseTimeout:1000;"
+        ></a-image>
+        <!-- <a-entity
           id="cursor"
           cursor="fuse: true; maxDistance:50; fuseTimeout:1000;"
           scale="0.1 0.1 0.1"
           position="0 0 -2"
           geometry="primitive: ring"
-          material="color: grey; shader: flat; opacity:0.5"
-        >
-        </a-entity>
+          material="color: grey; shader: flat; opacity:0.0"
+        > 
+        </a-entity>-->
       </a-entity>
       <a-entity
         random-position="min: -6 1 -4; max: 6 6 -6"
@@ -231,10 +262,17 @@
       </a-entity>
       <!-- Look up UI -->
       <a-text
-        value="Look Up"
+        value="LOOK UP"
         position="-0.4 1 -0.7"
         rotation="-80 180 180"
       ></a-text>
+      <!-- <a-entity text="value: Hello World;"></a-entity> -->
+      <a-entity
+        text="font: https://cdn.aframe.io/fonts/Roboto-msdf.json; value: LOOK UP"
+        position="0 2 -0.7"
+        rotation="-80 180 180"
+        wrap-count="80"
+      ></a-entity>
     </a-scene>
   </body>
 </html>

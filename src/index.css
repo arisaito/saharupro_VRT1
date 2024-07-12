@@ -24,7 +24,8 @@ a {
 .c-ttl {
   font-size: 2.3rem;
   color: #f38181;
-  margin: 35px 0 20px;
+  /* margin: 35px 0 20px; */
+  margin: 2rem 0 2rem;
 }
 
 .c-txt {
@@ -33,9 +34,10 @@ a {
 
 .c-btn {
   width: 100px;
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
+  padding: 0.7rem 1rem;
   margin: 20px auto;
-  background: #83ddcd;
+  background: #3fc9b1;
   color: white;
   font-weight: bold;
   font-size: 1.1rem;
@@ -53,10 +55,17 @@ a {
 }
 
 .c-btn-shop {
-  background: pink;
+  background: #ff787a;
   padding: 13px 15px;
   width: 130px;
-  margin: 10px auto;
+  margin: 10px auto 1.5rem;
+  font-size: 1.2rem;
+}
+
+.c-btn-retry {
+  padding: 13px 15px;
+  width: 130px;
+  margin: 10px auto 5px;
   font-size: 1.2rem;
 }
 
@@ -87,7 +96,8 @@ a {
   background: white;
   padding: 10px;
   z-index: 100;
-  width: 85%;
+  /* width: 85%; */
+  width: 83%;
   max-width: 450px;
   min-height: 250px;
   text-align: center;
@@ -170,7 +180,7 @@ p {
 
 .mikuji-message {
   display: inline-block;
-  margin: 15px auto;
+  margin: 8px auto 15px;
 }
 
 p.omikuji-kekka {
